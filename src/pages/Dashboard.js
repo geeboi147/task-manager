@@ -6,6 +6,7 @@ import TaskItem from '../components/TaskItem';
 import DashboardSection from '../components/DashboardSection';
 import SettingsSection from '../components/SettingsSection';
 import axios from 'axios';
+import ProfilePicture from '../components/ProfilePicture'; // Assuming this is your ProfilePicture component
 
 const Dashboard = () => {
   const { logout } = useAuth();
@@ -159,7 +160,7 @@ const Dashboard = () => {
   return (
     <div className="flex h-screen">
       <div className="w-1/4 bg-white shadow-md h-full flex flex-col">
-        <h2 className="text-2xl font-bold text-center my-6 text-blue-600">MyApp</h2>
+        <h2 className="text-2xl font-bold text-center my-6 text-blue-600">TASK MANAGER</h2>
         <nav className="flex flex-col items-start space-y-2 px-4">
           <SidebarLink name="Dashboard" />
           <SidebarLink name="Task" isExpandable={true} />
@@ -204,7 +205,10 @@ const Dashboard = () => {
           <div>
             {taskView === 'Create' ? (
               <>
+              <div className="flex justify-between items-center">
                 <h1 className="text-2xl font-bold mb-4">Create Task</h1>
+                <ProfilePicture className="w-12 h-12 rounded-full" /> {/* Using ProfilePicture component */}
+                </div>
                 <TaskForm
                   taskToEdit={taskToEdit}
                   onTaskAdded={handleAddTask}
@@ -213,7 +217,11 @@ const Dashboard = () => {
               </>
             ) : (
               <div className="mt-6">
-                <h1 className="text-2xl font-bold mb-4">Task List</h1>
+                <div className="flex justify-between items-center">
+                  <h1 className="text-2xl font-bold mb-4">Task List</h1>
+                  <ProfilePicture className="w-12 h-12 rounded-full" /> {/* Using ProfilePicture component */}
+                </div>
+
                 <div className="flex space-x-4 mb-4">
                   <input
                     type="text"
