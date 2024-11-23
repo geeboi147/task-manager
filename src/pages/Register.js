@@ -36,7 +36,7 @@ const Register = () => {
   
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL || 'https://task-manager-backend-2-5ejn.onrender.com'}/api/auth/register`,
+        'https://task-manager-backend-2-5ejn.onrender.com/api/auth/register',
         { username, email, password }
       );
   
