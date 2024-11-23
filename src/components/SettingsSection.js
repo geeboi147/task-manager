@@ -59,7 +59,7 @@ const SettingsSection = () => {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('No token found. Please log in.');
 
-      const response = await fetch('http://localhost:5000/api/upload-profile-picture', {
+      const response = await fetch('https://task-manager-backend-2-5ejn.onrender.com/api/upload-profile-picture', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,

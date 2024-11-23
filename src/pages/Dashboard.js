@@ -29,7 +29,7 @@ const Dashboard = () => {
     try {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('No token found');
-      const response = await axios.get('http://localhost:5000/api/tasks', {
+      const response = await axios.get('https://task-manager-backend-2-5ejn.onrender.com/api/tasks', {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -51,7 +51,7 @@ const Dashboard = () => {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('No token found');
       const response = await axios.post(
-        'http://localhost:5000/api/tasks',
+        'https://task-manager-backend-2-5ejn.onrender.com/api/tasks',
         newTask,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -76,7 +76,7 @@ const Dashboard = () => {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('No token found');
       const response = await axios.put(
-        `http://localhost:5000/api/tasks/${taskId}`,
+        `https://task-manager-backend-2-5ejn.onrender.com/api/tasks/${taskId}`,
         updatedData,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -95,7 +95,7 @@ const Dashboard = () => {
     try {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('No token found');
-      await axios.delete(`http://localhost:5000/api/tasks/${taskId}`, {
+      await axios.delete(`https://task-manager-backend-2-5ejn.onrender.com/api/tasks/${taskId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(tasks.filter((task) => task._id !== taskId));
@@ -110,7 +110,7 @@ const Dashboard = () => {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('No token found');
       await axios.put(
-        `http://localhost:5000/api/tasks/${taskId}`,
+        `https://task-manager-backend-2-5ejn.onrender.com/api/tasks/${taskId}`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );

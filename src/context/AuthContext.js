@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
 
         // If token is valid, proceed to validate the user
         axios
-          .get('http://localhost:5000/api/auth/me', {
+          .get('https://task-manager-backend-2-5ejn.onrender.com/api/auth/me', {
             headers: { Authorization: `Bearer ${token}` },
           })
           .then((response) => {
@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (token) => {
     try {
       localStorage.setItem('token', token);
-      const response = await axios.get('http://localhost:5000/api/auth/me', {
+      const response = await axios.get('https://task-manager-backend-2-5ejn.onrender.com/api/auth/me', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCurrentUser(response.data);

@@ -20,7 +20,7 @@ const TaskItem = ({ task, onDelete, onEdit, onStatusChange }) => {
       if (!token) return;
 
       const response = await axios.put(
-        `http://localhost:5000/api/tasks/${task._id}`,
+        `https://task-manager-backend-2-5ejn.onrender.com/api/tasks/${task._id}`,
         { status: 'Completed' },
         { headers: { Authorization: `Bearer ${token}` } }
       );

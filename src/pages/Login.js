@@ -21,7 +21,7 @@ const Login = () => {
       console.log('Email:', email);  // Log the email and password for debugging
       console.log('Password:', password);
       
-      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const response = await axios.post('https://task-manager-backend-2-5ejn.onrender.com', { email, password });
       const { token, user } = response.data;
   
       // Store token and user in context

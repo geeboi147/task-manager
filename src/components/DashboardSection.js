@@ -18,7 +18,7 @@ const DashboardSection = () => {
       const token = localStorage.getItem('token');
       if (!token) return;
 
-      const response = await axios.get('http://localhost:5000/api/tasks', {
+      const response = await axios.get('https://task-manager-backend-2-5ejn.onrender.com/api/tasks', {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -70,7 +70,7 @@ const DashboardSection = () => {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/tasks/${taskId}`,
+        `https://task-manager-backend-2-5ejn.onrender.com/api/tasks/${taskId}`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
